@@ -23,7 +23,7 @@
                     </form>
                     <h1>Posts</h1>
                     <ul>
-                        {% for post in posts%}
+                        {% for post in user.posts%}
                       
                             <li><a href="/posts/{{ post.id }}"><span>{{post.title}} </span></a></li>
                         {% endfor %}
