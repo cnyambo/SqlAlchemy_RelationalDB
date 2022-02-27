@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title%}
+    Edit a User
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br><br><br><br>
+    <div class="w-75 p-3 center" style="background-color: #eee; padding: 20px;">
+        <br>
+        <h1>Edit a post</h1>
+        <br>
+        
+        <form method="post" action="/users/{{post.id}}/posts/update">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name ="title"  value="{{post.title}}">
+          </div>
+          <div class="form-group">
+            <label for="content">Content</label>
+            <input type="text" class="form-control" name="content" value="{{post.content}}">
+          </div>    
+            <button type="submit" class="btn btn-info" name="btn_submit" value="cancel">Cancel</button>                                  
+            <button type="submit" class="btn btn-success" name="btn_submit" value="edit">Save</button>
+
+        </form>
+    </div>
+</div>        
+{% endblock %}

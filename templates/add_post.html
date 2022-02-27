@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title%}
+    New Post Form
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br><br><br><br>
+    <div class="w-75 p-3 center" style="background-color: white; padding: 20px;">
+        <br>
+        <h1>Add Post for {{user.first_name}} {{user.last_name}}</h1>
+        <br>
+       
+        <form method="post" action="/users/{{user.id}}/posts/new">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name ="title"  >
+              </div>
+              <div class="form-group">
+                <label for="content">Content</label>
+                <input type="text" class="form-control" name="content" >
+              </div>    
+                                               
+            <button type="submit" class="btn btn-primary" name="btnSubmit" value="cancel">Cancel</button>
+            <button type="submit" class="btn btn-success" name="btnSubmit" value="add">Add</button>
+
+        </form>
+    </div>
+</div>        
+{% endblock %}

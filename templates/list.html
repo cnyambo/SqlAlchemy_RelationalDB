@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title%}
+    User Listing
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br><br><br><br>
+    <div class="w-75 p-3 center" style="background-color: white; padding: 20px;">
+        <br>
+        <h1>Users</h1>
+        <br>
+        <ul>
+            {% for i in users %}
+                <li><a href="/users/{{ i.id }}"><span>{{i.first_name}}  {{i.last_name}}</span></a></li>
+            {% endfor %}    
+        </ul>
+        </div>
+        <div class="w-75 p-3 center" style="background-color: #eee; padding: 20px;">
+
+        <form method="get" action="/users/new">
+                              
+            <button type="submit" class="btn btn-primary" id="btn_submit">Add User</button>
+
+        </form>
+    </div>
+</div>        
+{% endblock %}
